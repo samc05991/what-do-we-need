@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-
-body {
-    margin: 0px;
-}
-
 $primary: #00736B;
 $secondary: #E0EFF2;
 $white: #FFFFFF;
+
+body {
+    margin: 0px;
+    font-family: 'Fredoka One', cursive;
+    background-color: $secondary;
+}
+
