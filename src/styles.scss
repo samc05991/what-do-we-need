@@ -1,7 +1,12 @@
+
 /* You can add global styles to this file, and also import other style files */
 $primary: #00736B;
 $secondary: #E0EFF2;
 $white: #FFFFFF;
+
+@import "./scss/components/panel.scss";
+@import "./scss/components/button.scss";
+@import "./scss/components/input.scss";
 
 body {
     margin: 0px;
