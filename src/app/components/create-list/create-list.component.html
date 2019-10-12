@@ -1,0 +1,18 @@
+<div class="wd-create-list">
+    <div class="wd-panel">
+        <span class="label">List Name</span><br>
+        <input type="text" [(ngModel)]="list.name" class="wd-input"><br>
+    </div>
+
+    <div class="wd-panel">
+        <span class="label">Your List</span><br>
+        <span class="label" *ngIf="!list.items || list.items.length === 0">You have not added any items yet! Add one below!</span><br>
+    </div>
+
+    <div class="wd-panel">
+        <span class="label">Item Name</span><br>
+        <input type="text" [(ngModel)]="newItem.name" class="wd-input"><br>
+
+        <button type="button" class="wd-btn wd-btn-block" (click)="addItemToList()">Add Item</button>
+    </div>
+</div>
