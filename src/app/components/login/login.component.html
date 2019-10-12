@@ -5,12 +5,11 @@
         </div>
 
         <div class="wd-inputs">
-            <input type="text" class="wd-input" placeholder="Email">
-            <input type="password" class="wd-input" placeholder="Password">
+            <input type="text" class="wd-input" placeholder="Email" aria-label="email" [(ngModel)]="user.email" id="email" name="email" required>
+            <input type="password" class="wd-input" placeholder="Password" id="password" aria-label="password" [(ngModel)]="user.password" name="password" required>
         </div>
-
+        
         <br>
-        <button type="button" class="wd-btn"> Submit </button>
+        <button type="submit" class="wd-btn" (click)="submit()">Submit</button>
     </div>
 </div>
-    

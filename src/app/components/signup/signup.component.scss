@@ -5,14 +5,14 @@
     background: $secondary;
     width: 100%;
     height: 100vh;
+    padding-top: 15px;
     
     .wd-card {
         width: 350px;
-        height: 300px;
+        height: 250px;
         background-color: $white;
         color: $primary;
         margin: 0 auto;
-        margin-top: 50px;
         padding: 15px;
         border-radius: 6px;
         box-sizing: border-box;
@@ -43,6 +43,10 @@
 
         .wd-card-title {
             color: $primary;
+
+            h1 {
+                margin-top: 0px;
+            }
         }
     }
 }

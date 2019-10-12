@@ -53,7 +53,7 @@ export class AuthService {
 
                 this.toggleUserIsLoggedIn();
 
-                this._router.navigate(['/dashboard']);
+                this._router.navigate(['/lists']);
             },
             (error: any) => {}
         );
@@ -75,7 +75,7 @@ export class AuthService {
 
                 this.toggleUserIsLoggedIn();
 
-                this._router.navigate(['/dashboard']);
+                this._router.navigate(['/lists']);
             },
             (error: any) => {}
         );
