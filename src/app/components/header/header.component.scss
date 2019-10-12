@@ -8,11 +8,23 @@
     height: 60px;
     padding: 15px;
     box-sizing: border-box;
-
-    h2 {
+    
+    .wd-header-title {
         margin: 0px;
-        text-align: center;
-        font-family: 'Fredoka One', cursive;
-        font-weight: 100;
+        display: inline-block;
+        font-size: 18px;
+    }
+
+    .wd-header-links {
+        float: right;
+        display: block;
+
+        a {
+            text-decoration: none;
+            color: $white;
+            font-size: 18px;
+            margin: 8px;
+
+        }
     }
 }
