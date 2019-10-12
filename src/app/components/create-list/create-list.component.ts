@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { List } from 'src/app/models/list.model';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { ListService } from 'src/app/services/list.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-create-list',
@@ -9,11 +12,11 @@ import { List } from 'src/app/models/list.model';
 export class CreateListComponent implements OnInit {
 
     public list: List;
-    public newItem: Object = {
+    public newItem: any = {
         name: ''
     }
 
-    constructor() { 
+    constructor(private _listService: ListService, private _router: Router) { 
         this.list = new List();
     }
 
@@ -24,5 +27,21 @@ export class CreateListComponent implements OnInit {
         let newItem = Object.assign({}, this.newItem);
 
         this.list.items ? this.list.items.push(newItem) : this.list.items = [newItem];
+
+        this.newItem.name = '';
+    }
+
+    removeItemFromList(index) {
+        this.list.items.splice(index, 1);
+    }
+
+    saveList() {
+        this._listService.addList(this.list).subscribe((response) => {
+            this._router.navigate(['/lists']);
+        });
+    }
+
+    drop(event: CdkDragDrop<number[]>) {
+        moveItemInArray(this.list.items, event.previousIndex, event.currentIndex);
     }
 }

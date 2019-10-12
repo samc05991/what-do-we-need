@@ -1,18 +1,37 @@
-<div class="wd-create-list">
-    <div class="wd-panel">
-        <span class="label">List Name</span><br>
+<div class="wd-container text-center">
+    <h2>Create List</h2>
+</div>
+
+<div class="wd-container wd-create-list">
+    <div class="list-name wd-panel">
+        <strong><span class="wd-label">List Name</span></strong><br>
         <input type="text" [(ngModel)]="list.name" class="wd-input"><br>
     </div>
 
-    <div class="wd-panel">
-        <span class="label">Your List</span><br>
-        <span class="label" *ngIf="!list.items || list.items.length === 0">You have not added any items yet! Add one below!</span><br>
+    <div class="list-items wd-panel">
+        <strong><span class="wd-label">Your List</span></strong><br>
+        <strong><span class="wd-label" *ngIf="!list.items || list.items.length === 0">You have not added any items yet! Add one below!</span></strong><br>
+
+        <div *ngIf="list.items && list.items.length > 0" cdkDropList (cdkDropListDropped)="drop($event)">
+            <div *ngFor="let item of list.items; let i = index" cdkDrag class="wd-list-item margin-top-10">
+                <div class="wd-list-item-title">
+                    <span class="wd-label">{{item.name}}</span><br>
+                </div>
+
+                <div class="wd-list-item-controls">
+                    <button type="button" class="wd-btn wd-btn-sm wd-btn-danger" (click)="removeItemFromList(i)">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="wd-btn wd-btn-block margin-top-10" (click)="saveList()">Save List</button>
     </div>
 
-    <div class="wd-panel">
-        <span class="label">Item Name</span><br>
+    <div class="item-panel wd-panel margin-top-20">
+        <strong><span class="wd-label">Item Name</span></strong><br>
+
         <input type="text" [(ngModel)]="newItem.name" class="wd-input"><br>
 
-        <button type="button" class="wd-btn wd-btn-block" (click)="addItemToList()">Add Item</button>
+        <button type="button" class="wd-btn wd-btn-block margin-top-10" (click)="addItemToList()">Add Item</button>
     </div>
 </div>

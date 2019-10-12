@@ -8,20 +8,12 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 
 export class ListsComponent implements OnInit {
-
-    allNumbers: number[] = [];
     
     constructor() {
-        for (let insertNumbers = 0; insertNumbers <= 100; insertNumbers++) {
-            this.allNumbers.push(insertNumbers);
-        }
+
     }
 
     ngOnInit() {
 
-    }
-    
-    drop(event: CdkDragDrop<number[]>) {
-        moveItemInArray(this.allNumbers, event.previousIndex, event.currentIndex);
     }
 }

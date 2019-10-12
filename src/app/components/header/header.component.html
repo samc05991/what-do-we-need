@@ -4,7 +4,9 @@
     </div>
 
     <div class="wd-header-links">
-        <a class="" routerLinkActive="" [routerLink]="['/login']">Login</a>
-        <a class="" routerLinkActive="" [routerLink]="['/sign-up']">Sign Up</a>
+        <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/login']">Login</a>
+        <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/sign-up']">Sign Up</a>
+        <a *ngIf="!isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/lists']">Lists</a>
+        <a *ngIf="!isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/create-list']">Create List</a>
     </div>
 </div>

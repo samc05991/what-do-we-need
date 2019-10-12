@@ -1,3 +1,47 @@
 .wd-create-list {
-    padding: 15px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "list-name list-items"
+        "items-panel list-items";
+
+    .list-name {
+        grid-area: list-name;
+    }
+
+    .list-items {
+        grid-area: list-items;
+
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+    }
+
+    .items-panel {
+        grid-area: items-panel;
+    }
+    
+}
+
+@media screen and (max-width: 1400px) {
+    .wd-create-list {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .wd-create-list {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .wd-create-list {
+        width: 100%;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "list-name"
+            "list-items"
+            "items-panel";
+    }
 }

@@ -1,0 +1,16 @@
+.wd-list-item {
+    background-color: $primary;
+    color: $white;
+    border-radius: 5px;
+    padding: 5px;
+    width: 385px;
+
+    .wd-list-item-title, .wd-list-item-controls {
+        display: inline-block;
+        width: 50%;
+    }
+    
+    .wd-list-item-controls {
+        text-align: right;
+    }
+}
