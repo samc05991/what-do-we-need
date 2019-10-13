@@ -1,16 +1,28 @@
-<div class="wd-container text-center">
+<div class="wd-container">
     <h2>Create List</h2>
 </div>
 
 <div class="wd-container wd-create-list">
     <div class="list-name wd-panel">
-        <strong><span class="wd-label">List Name</span></strong><br>
-        <input type="text" [(ngModel)]="list.name" class="wd-input"><br>
+        <strong><span class="wd-label-header">List Name</span></strong><br>
+        <input type="text" [(ngModel)]="list.name" class="wd-input" placeholder="List Name"><br>
+    </div>
+
+    <div class="item-panel wd-panel margin-top-20">
+        <strong><span class="wd-label-header">Add Item</span></strong><br><br>
+
+        <strong><span class="wd-label">Name</span></strong><br>
+        <input type="text" [(ngModel)]="newItem.name" class="wd-input" placeholder="Item Name"><br><br>
+
+        <strong><span class="wd-label">Quantity</span></strong><br>
+        <input type="text" [(ngModel)]="newItem.quantity" class="wd-input" placeholder="Item Quantity"><br><br>
+
+        <button type="button" class="wd-btn wd-btn-block margin-top-20" (click)="addItemToList()">Add To List</button>
     </div>
 
     <div class="list-items wd-panel">
-        <strong><span class="wd-label">Your List</span></strong><br>
-        <strong><span class="wd-label" *ngIf="!list.items || list.items.length === 0">You have not added any items yet! Add one below!</span></strong><br>
+        <strong><span class="wd-label">{{list.name || 'Your List'}}</span></strong><br>
+        <strong class="text-center"><span class="wd-label" *ngIf="!list.items || list.items.length === 0">You have not added any items yet!</span></strong><br>
 
         <div *ngIf="list.items && list.items.length > 0" cdkDropList (cdkDropListDropped)="drop($event)">
             <div *ngFor="let item of list.items; let i = index" cdkDrag class="wd-list-item margin-top-10">
@@ -26,12 +38,5 @@
 
         <button type="button" class="wd-btn wd-btn-block margin-top-10" (click)="saveList()">Save List</button>
     </div>
-
-    <div class="item-panel wd-panel margin-top-20">
-        <strong><span class="wd-label">Item Name</span></strong><br>
-
-        <input type="text" [(ngModel)]="newItem.name" class="wd-input"><br>
-
-        <button type="button" class="wd-btn wd-btn-block margin-top-10" (click)="addItemToList()">Add Item</button>
-    </div>
+    
 </div>

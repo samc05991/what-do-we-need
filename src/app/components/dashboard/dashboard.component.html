@@ -1,34 +1,48 @@
-<div class="wd-container text-center">
+<div class="wd-container">
     <h2>Dashboard</h2>
 </div>
 <div class="wd-container wd-dashboard">
     <div class="wd-we-need wd-panel">
-        <strong><span class="wd-label">What do we need?</span></strong><br>
-
-        <div class="wd-list-item margin-top-15">
-            <div class="wd-list-item-title">
-                <span class="wd-label">Thing 1</span><br>
-            </div>
-
-            <div class="wd-list-item-controls">
-            </div>
-        </div>
+        <strong><span class="wd-label-header">What do we need?</span></strong><br>
 
         <div class="wd-list-item margin-top-10">
             <div class="wd-list-item-title">
-                <span class="wd-label">Thing 2</span><br>
+                <strong><span class="wd-label">Thing 1</span></strong><br>
             </div>
-            
+
             <div class="wd-list-item-controls">
+                <button type="button" class="wd-btn wd-btn-sm wd-btn-danger margin-right-15">Remove</button>
+                <button type="button" class="wd-btn wd-btn-sm">Add to Inventory</button>
             </div>
         </div>
     </div>
     <div class="inventory wd-panel">
-        <strong><span class="wd-label">Inventory</span></strong><br>
-        <button type="button" class="wd-btn margin-top-15">Manage Inventory</button>
+        <div class="wd-panel-header">
+            <strong><span class="wd-label-header">Inventory</span></strong>
+            <button type="button" class="wd-btn wd-btn-sm">Manage Inventory</button>
+        </div>
     </div>
     <div class="lists wd-panel">
-        <strong><span class="wd-label">Lists</span></strong><br>
-        <button type="button" class="wd-btn margin-top-15">Manage Lists</button>
+        <div class="wd-panel-header margin-bottom-20">
+            <strong><span class="wd-label-header">Lists</span></strong>
+            <button type="button" class="wd-btn wd-btn-sm" [routerLink]="['/create-list']">Create List</button>
+        </div>
+
+        <div class="wd-list-item wd-list-parent" *ngFor="let list of lists" (click)="list.isExpanded = !list.isExpanded">
+            <div class="wd-panel-header">
+                <strong><span class="wd-label">{{list.name}}</span></strong>
+
+                <button type="button" class="wd-btn wd-btn-sm wd-btn-secondary" (click)="$event.stopPropagation()">Edit</button>
+                <button type="button" class="wd-btn wd-btn-sm wd-btn-secondary margin-right-15">{{list.isExpanded ? 'Hide' : 'Show'}} Items</button>
+            </div>
+
+            <div *ngIf="list.isExpanded" [@slideInOut] class="margin-top-20">
+                <div *ngFor="let item of list.items; let i = index">
+                    <div class="wd-list-item-title">
+                        <span class="wd-label">{{item.name}}</span><br>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

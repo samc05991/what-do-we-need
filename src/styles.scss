@@ -1,8 +1,33 @@
 
 /* You can add global styles to this file, and also import other style files */
-$primary: #00736B;
-$secondary: #E0EFF2;
-$white: #FFFFFF;
+
+$primary: #2C3E50;
+$secondary: #35495E;
+$third: #4A6FBD;
+$border: #E57E25;
+$white: #ECF0F1;
+$grey: #BDC3C7;
+$danger: #EC4037;
+
+
+// $primary: #48BCC0;
+// $secondary: #717D97;
+// $third: #4A6FBD;
+// $white: #F5F3F1;
+// $grey: #ECF1F5;
+// $danger: #EC4037;
+
+// $primary: #023543;
+// $secondary: #3F647F;
+// $white: #F5F3F1;
+// $grey: #c2c2c2;
+// $danger: #EC4037;
+
+// $primary: #00736B;
+// $secondary: #E0EFF2;
+// $white: #FFFFFF;
+// $danger: #732600;
+
 
 @import "./scss/components/panel.scss";
 @import "./scss/components/button.scss";
@@ -13,6 +38,7 @@ $white: #FFFFFF;
 body {
     margin: 0px;
     background-color: $secondary;
+    color: $white;
 }
 
 button, body {
@@ -39,6 +65,45 @@ button:focus {
     margin-top: 20px;
 }
 
+.margin-right-5 {
+    margin-right: 5px;
+}
+.margin-right-10 {
+    margin-right: 10px;
+}
+.margin-right-15 {
+    margin-right: 15px;
+}
+.margin-right-20 {
+    margin-right: 20px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+.margin-left-10 {
+    margin-left: 10px;
+}
+.margin-left-15 {
+    margin-left: 15px;
+}
+.margin-left-20 {
+    margin-left: 20px;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+.margin-bottom-15 {
+    margin-bottom: 15px;
+}
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     margin-top: 15px;
@@ -52,4 +117,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 15px;
     width: 70%;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 1400px) {
+    .wd-container {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .wd-container {
+        width: 90%;
+    }
 }

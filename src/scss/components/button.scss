@@ -2,9 +2,10 @@
     border-radius: 5px;
     padding: 6px;
     border: 0;
-    background-color: $primary;
+    background-color: $border;
     color: $white;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .wd-btn-sm {
@@ -16,6 +17,16 @@
     width: 100%;
 }
 
+
+.wd-btn-primary {
+    background-color: $primary;
+}
+.wd-btn-secondary {
+    background-color: $secondary;
+}
+.wd-btn-third {
+    background-color: $third;
+}
 .wd-btn-danger {
-    background-color: red;
+    background-color: $danger;
 }

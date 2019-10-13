@@ -37,7 +37,7 @@ export class ListService {
 
     handleAddList(list: List) {
         list.created_by = this._authService.getCurrentUserId();
-        console.log('sending list', list);
+
         this.addList(list).subscribe((response: any) => {
             this.lists.push(new List(response.json().obj));
 

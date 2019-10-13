@@ -1,8 +1,10 @@
 .wd-list-item {
-    background-color: $primary;
-    color: $white;
-    border-radius: 5px;
-    padding: 5px;
+    color: $secondary;
+    cursor: pointer;
+    border-bottom: 2px solid $border;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
     width: 100%;
     box-sizing: border-box;
 
@@ -15,3 +17,8 @@
         text-align: right;
     }
 }
+
+// .wd-list-item:hover {
+//     color: $secondary;
+//     background-color: $white;
+// }

@@ -1,5 +1,6 @@
 .wd-panel {
     background-color: $white;
+    color: $secondary;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -8,4 +9,10 @@
     -webkit-box-shadow: 7px 7px 20px -5px rgba(0,0,0,0.46);
     -moz-box-shadow: 7px 7px 20px -5px rgba(0,0,0,0.46);
     box-shadow: 7px 7px 20px -5px rgba(0,0,0,0.46);
+
+    .wd-panel-header {
+        .wd-btn {
+            float: right;
+        }
+    }
 }

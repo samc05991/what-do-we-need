@@ -6,28 +6,25 @@
         "list-name list-items"
         "items-panel list-items";
 
-    .list-name {
-        grid-area: list-name;
-
+    .list-name, .list-items, .items-panel {
+        width: 425px;
         justify-content: space-between;
         flex-direction: column;
         display: flex;
+    }
+
+    .list-name {
+        grid-area: list-name;
+        max-height: 200px;
     }
 
     .list-items {
         grid-area: list-items;
-
-        justify-content: space-between;
-        flex-direction: column;
-        display: flex;
     }
 
     .items-panel {
+        max-height: 200px;
         grid-area: items-panel;
-
-        justify-content: space-between;
-        flex-direction: column;
-        display: flex;
     }
     
 }
@@ -51,5 +48,10 @@
             "list-name"
             "list-items"
             "items-panel";
+
+            .list-name, .list-items, .items-panel {
+                margin-top: 20px;
+                width: 425px;
+            }
     }
 }
