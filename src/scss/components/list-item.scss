@@ -3,7 +3,8 @@
     color: $white;
     border-radius: 5px;
     padding: 5px;
-    width: 385px;
+    width: 100%;
+    box-sizing: border-box;
 
     .wd-list-item-title, .wd-list-item-controls {
         display: inline-block;

@@ -11,7 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/signup/signup.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { ListsComponent } from './components/lists/lists.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateListComponent } from './components/create-list/create-list.component';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { CreateListComponent } from './components/create-list/create-list.compon
     HeaderComponent,
     LoginComponent,
     SignUpComponent,
-    ListsComponent,
+    DashboardComponent,
     CreateListComponent
   ],
   imports: [

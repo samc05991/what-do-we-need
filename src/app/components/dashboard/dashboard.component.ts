@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
-    selector: 'app-lists',
-    templateUrl: './lists.component.html',
-    styleUrls: ['./lists.component.scss']
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.scss']
 })
 
-export class ListsComponent implements OnInit {
+export class DashboardComponent implements OnInit {
     
     constructor() {
 

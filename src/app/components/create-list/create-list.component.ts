@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
     templateUrl: './create-list.component.html',
     styleUrls: ['./create-list.component.scss']
 })
+
 export class CreateListComponent implements OnInit {
 
     public list: List;
@@ -36,9 +37,7 @@ export class CreateListComponent implements OnInit {
     }
 
     saveList() {
-        this._listService.addList(this.list).subscribe((response) => {
-            this._router.navigate(['/lists']);
-        });
+        this._listService.handleAddList(this.list);
     }
 
     drop(event: CdkDragDrop<number[]>) {

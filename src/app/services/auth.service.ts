@@ -75,7 +75,7 @@ export class AuthService {
 
                 this.toggleUserIsLoggedIn();
 
-                this._router.navigate(['/lists']);
+                this._router.navigate(['/dashboard']);
             },
             (error: any) => {}
         );

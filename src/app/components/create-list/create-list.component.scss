@@ -8,6 +8,10 @@
 
     .list-name {
         grid-area: list-name;
+
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
     }
 
     .list-items {
@@ -20,6 +24,10 @@
 
     .items-panel {
         grid-area: items-panel;
+
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
     }
     
 }
