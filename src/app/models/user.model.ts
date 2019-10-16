@@ -1,11 +1,13 @@
 import { List } from './list.model';
+import { BaseModel } from './base-model.model';
 
-export class User {
+export class User extends BaseModel {
 
-    public _id: string;
     public email: string;
     public password: string = '';
     public lists: Array<List> = [];
 
-    constructor() {}
+    constructor(user?: any) {
+        super(user);
+    }
 }

@@ -1,20 +1,15 @@
-export class List {
+import { Item } from './item.model';
+import { BaseModel } from './base-model.model';
 
-    public _id?: string;
-    public items?: [{}];
+export class List extends BaseModel {
+    
+    public items?: Item[] = [];
     public shared_with?: [];
-    public created_by?: string;
     public name?: string;
     public isExpanded: Boolean;
 
     constructor(list?: any) {
-        if(list) {
-            this._id = list._id || '';
-            this.name = list.name || '';
-            this.items = list.items || '';
-            this.shared_with = list.shared_with || '';
-            this.created_by = list.created_by || '';
-        }
+        super(list);
 
         this.isExpanded = false;
     }
