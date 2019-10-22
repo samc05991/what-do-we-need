@@ -46,8 +46,8 @@
         grid-template-rows: auto auto auto;
         grid-template-areas:
             "list-name"
-            "list-items"
-            "items-panel";
+            "items-panel"
+            "list-items";
 
             .list-name, .list-items, .items-panel {
                 margin-top: 20px;
