@@ -45,7 +45,7 @@
             </div>
 
             <div class="wd-list-item-controls">
-                <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToNeeds(item, i)">I Need This!</button>
+                <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToNeedsFromStock(item, i)">I Need This!</button>
                 <button type="button" class="wd-btn wd-btn-sm wd-btn-danger" (click)="removeFromStock(i)">
                     <span><fa-icon [icon]="faTrashAlt"></fa-icon></span>
                 </button>
@@ -81,7 +81,7 @@
                     </div>
         
                     <div class="wd-list-item-controls">
-                        <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToNeeds(item, i)">I Need This!</button>
+                        <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToNeedsFromList(item, i)">I Need This!</button>
                     </div>
                 </div>
             </div>

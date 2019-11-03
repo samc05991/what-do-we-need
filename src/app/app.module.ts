@@ -15,6 +15,9 @@ import { SignUpComponent } from './components/signup/signup.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateListComponent } from './components/create-list/create-list.component';
+import { ListsComponent } from './components/lists/lists.component';
+import { NeedsComponent } from './components/needs/needs.component';
+import { StockComponent } from './components/stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { CreateListComponent } from './components/create-list/create-list.compon
     LoginComponent,
     SignUpComponent,
     DashboardComponent,
-    CreateListComponent
+    CreateListComponent,
+    ListsComponent,
+    NeedsComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,
