@@ -11,8 +11,10 @@ export class List extends BaseModel {
     constructor(list?: any) {
         super(list);
 
-        for(let i = 0; i < list.items.length; i++) {
-            this.items[i] = new Item(list.items[i]);
+        if(list && list.items) {
+            for(let i = 0; i < list.items.length; i++) {
+                this.items[i] = new Item(list.items[i]);
+            }
         }
 
         this.isExpanded = false;

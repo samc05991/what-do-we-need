@@ -1,1 +1,33 @@
-<p>lists works!</p>
+<div class="wd-panel-header margin-bottom-20">
+    <strong><span class="wd-label-header">Lists of stuff...</span></strong>
+    <button type="button" class="wd-btn wd-btn-sm" [routerLink]="['/create-list']">
+        New  <span><fa-icon [icon]="faExternalLinkAlt"></fa-icon></span>
+    </button>
+</div>
+
+<div class="wd-list-item wd-list-parent" *ngFor="let list of lists; let k = index;" (click)="list.isExpanded = !list.isExpanded">
+    <div class="wd-panel-header">
+        <strong><span class="wd-label">{{list.name}}</span></strong>
+
+        <button type="button" class="wd-btn wd-btn-sm wd-btn-danger" (click)="$event.stopPropagation(); deleteList(list, k)">
+            <span><fa-icon [icon]="faTrashAlt"></fa-icon></span>
+        </button>
+
+        <button type="button" class="wd-btn wd-btn-sm wd-btn-secondary margin-right-10" (click)="$event.stopPropagation()">
+            <span><fa-icon [icon]="faCog"></fa-icon></span>
+        </button>
+        <button type="button" class="wd-btn wd-btn-sm wd-btn-secondary margin-right-10">{{list.isExpanded ? 'Hide' : 'Show'}} Items</button>
+    </div>
+
+    <div *ngIf="list.isExpanded" [@enterAnimation] class="margin-top-20">
+        <div *ngFor="let item of list.items; let i = index">
+            <div class="wd-list-item-title">
+                <span class="wd-label">{{item.name}}</span>
+            </div>
+
+            <div class="wd-list-item-controls">
+                <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToNeedsFromList(item, i)">I Need This!</button>
+            </div>
+        </div>
+    </div>
+</div>

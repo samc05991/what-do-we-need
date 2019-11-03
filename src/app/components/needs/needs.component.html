@@ -1,1 +1,29 @@
-<p>needs works!</p>
+<div class="wd-panel-header">
+    <strong><span class="wd-label-header">What do we need?</span></strong>
+    <button type="button" class="wd-btn wd-btn-sm" (click)="addItemToStock = !addItemToStock">Add new item</button>
+
+    <div *ngIf="addItemToStock" class="margin-top-20">
+        <strong><span class="wd-label">Add Item</span></strong><br><br>
+
+        <strong><span class="wd-label">Name</span></strong><br>
+        <input type="text" [(ngModel)]="newItem.name" class="wd-input" placeholder="Item Name"><br><br>
+
+        <!-- <strong><span class="wd-label">Quantity</span></strong><br>
+        <input type="text" [(ngModel)]="newItem.quantity" class="wd-input" placeholder="Item Quantity"><br><br>
+ -->
+        <button type="button" class="wd-btn wd-btn-block margin-top-20" (click)="addNewItemToNeeds()">Add To List</button>
+    </div>
+</div>
+
+<div class="wd-list-item margin-top-10" *ngFor="let item of needs; let i = index;">
+    <div class="wd-list-item-title">
+        <strong><span class="wd-label">{{item.name}}</span></strong><br>
+    </div>
+
+    <div class="wd-list-item-controls">
+        <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToStock(item, i)">I Got This!</button>
+        <button type="button" class="wd-btn wd-btn-sm wd-btn-danger" (click)="removeFromNeeds(i)">
+            <span><fa-icon [icon]="faTrashAlt"></fa-icon></span>
+        </button>
+    </div>
+</div>
