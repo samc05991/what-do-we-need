@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { ListService } from 'src/app/services/list.service';
-import { List } from 'src/app/models/list.model';
-import { trigger, style, state, animate, transition } from '@angular/animations';
-import { faTrashAlt, faCog, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import { Item } from 'src/app/models/item.model';
-import { NeedsService } from 'src/app/services/needs.service';
-import { StockService } from 'src/app/services/stock.service';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Component({
     selector: 'app-dashboard',
@@ -29,10 +22,6 @@ import { StockService } from 'src/app/services/stock.service';
 })
 
 export class DashboardComponent implements OnInit {
-    public faTrashAlt = faTrashAlt;
-    public faCog = faCog;
-    public faExternalLinkAlt = faExternalLinkAlt;
-
     public addItemToStock: Boolean = false;
 
     constructor() {}

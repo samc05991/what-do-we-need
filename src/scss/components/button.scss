@@ -8,6 +8,11 @@
     cursor: pointer;
 }
 
+.wd-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
 .wd-btn-sm {
     font-size: 16px;
 }
@@ -28,4 +33,12 @@
 }
 .wd-btn-danger {
     background-color: $danger;
+}
+
+
+@media screen and (max-width: 600px) {
+    .wd-btn {
+        padding: 3px;
+        font-size: 16px;
+    }    
 }

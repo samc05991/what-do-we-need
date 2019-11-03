@@ -5,3 +5,9 @@
 .wd-label {
     font-size: 18px;
 }
+
+@media screen and (max-width: 600px) {
+    .wd-label-header {
+        font-size: 18px;
+    }
+}

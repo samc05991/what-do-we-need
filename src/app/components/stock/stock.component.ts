@@ -2,13 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { StockService } from 'src/app/services/stock.service';
 import { Item } from 'src/app/models/item.model';
 import { NeedsService } from 'src/app/services/needs.service';
+import { faTrashAlt, faCog, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-stock',
     templateUrl: './stock.component.html',
     styleUrls: ['./stock.component.scss']
 })
+
 export class StockComponent implements OnInit {
+    public faTrashAlt = faTrashAlt;
+    public faCog = faCog;
+    public faExternalLinkAlt = faExternalLinkAlt;
     public stock: Item[] = [];
 
     constructor(
@@ -40,6 +45,8 @@ export class StockComponent implements OnInit {
      * @desc Remove an item from stock
      */
     removeFromStock(index: number) {
-        this.stock.splice(index, 1)
+        this._stockService.destroy(this.stock[index]).subscribe();
+
+        this.stock.splice(index, 1);
     }
 }

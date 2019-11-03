@@ -4,13 +4,18 @@ import { NeedsService } from 'src/app/services/needs.service';
 import { ListService } from 'src/app/services/list.service';
 import { StockService } from 'src/app/services/stock.service';
 import { List } from 'src/app/models/list.model';
+import { faTrashAlt, faCog, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-lists',
     templateUrl: './lists.component.html',
     styleUrls: ['./lists.component.scss']
 })
+
 export class ListsComponent implements OnInit {
+    public faTrashAlt = faTrashAlt;
+    public faCog = faCog;
+    public faExternalLinkAlt = faExternalLinkAlt;
     public lists: List[] = [];
 
     constructor(

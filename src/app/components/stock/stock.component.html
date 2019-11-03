@@ -1,6 +1,6 @@
 <div class="wd-panel-header">
     <strong><span class="wd-label-header">What have we got?</span></strong>
-    <button type="button" class="wd-btn wd-btn-sm" disabled>Manage Inventory</button>
+    <button type="button" class="wd-btn wd-btn-sm" disabled>Manage</button>
 </div>
 
 <div class="wd-list-item margin-top-10" *ngFor="let item of stock; let i = index;">
@@ -9,7 +9,7 @@
     </div>
 
     <div class="wd-list-item-controls">
-        <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToNeedsFromStock(item, i)">I Need This!</button>
+        <button type="button" class="wd-btn wd-btn-sm wd-btn-primary margin-right-10" (click)="addToNeedsFromStock(item, i)">We Need This!</button>
         <button type="button" class="wd-btn wd-btn-sm wd-btn-danger" (click)="removeFromStock(i)">
             <span><fa-icon [icon]="faTrashAlt"></fa-icon></span>
         </button>

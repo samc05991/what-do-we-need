@@ -2,13 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from 'src/app/models/item.model';
 import { NeedsService } from 'src/app/services/needs.service';
 import { StockService } from 'src/app/services/stock.service';
+import { faTrashAlt, faCog, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: 'app-needs',
     templateUrl: './needs.component.html',
     styleUrls: ['./needs.component.scss']
 })
+
 export class NeedsComponent implements OnInit {
+    public faTrashAlt = faTrashAlt;
+    public faCog = faCog;
+    public faExternalLinkAlt = faExternalLinkAlt;
     public needs: Item[] = [];
     public newItem: {} = {
         name: '',
