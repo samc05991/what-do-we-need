@@ -6,7 +6,7 @@ import { Item } from '../models/item.model';
     providedIn: 'root'
 })
 
-export class NeedsService extends ServiceProviderService {
+export class StockService extends ServiceProviderService {
     public apiEndpoint: string = '/items'
 
     handleAddItem(item: Item) {
@@ -24,7 +24,7 @@ export class NeedsService extends ServiceProviderService {
 
         this.gettingData = true;
 
-        return this.index({status: 'need'}).subscribe((response: any) => {
+        return this.index({status: 'in_stock'}).subscribe((response: any) => {
             for (const item of response.obj) {
                 this.updateSubscriber(new Item(item));
             }

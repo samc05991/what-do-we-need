@@ -7,45 +7,37 @@ import { AuthService } from '../services/auth.service';
 import { List } from '../models/list.model';
 import { Item } from '../models/item.model';
 import { Router } from '@angular/router';
+import { ServiceProviderService } from './service-provider.service';
+import { NeedsService } from './needs.service';
 
 @Injectable()
 
-export class ListService {
-
-    lists: List[] = [];
-    gettingLists: boolean = false;
-    updateListSubscriber: Subject<List> = new Subject<List>();
+export class ListService extends ServiceProviderService {
+    public apiEndpoint: string = '/lists';
 
     constructor(
-        private _http: HttpClient,
-        private _envConfig: EnvironmentConfig,
-        private _authService: AuthService,
-        private _routeService: Router
+        _http: HttpClient,
+        _envConfig: EnvironmentConfig,
+        _authService: AuthService,
+        _routeService: Router,
+        private _needsService: NeedsService
     ) {
-        this.updateListSubscriber.subscribe(
-            (list: List) => {
-                this.lists.push(list);
-            }
-        );
-    }
-
-    dataUpdatedSubscriber(list: List) {
-        this.updateListSubscriber.next(list);
+        super(_http, _envConfig, _authService, _routeService);
     }
 
     handleAddList(list: List, updateNeedList: Boolean = false) {
         list.created_by = this._authService.getCurrentUserId();
 
-        this.addList(list).subscribe((response: any) => {
+        this.store(list).subscribe((response: any) => {
             const list = new List(response.obj);
 
-            this.dataUpdatedSubscriber(list);
+            this.updateSubscriber(list);
 
             if(updateNeedList) {
                 for(let i = 0; i < list.items.length; i++) {
                     list.items[i] = new Item(list.items[i]);
 
-                    // this._needsService.addNeedItem(list.items[i]);
+                    this._needsService.updateSubscriber(list.items[i]);
                 }
             }
 
@@ -54,42 +46,23 @@ export class ListService {
     }
 
     handleGetLists() {
-        if (this.lists.length > 0 || this.gettingLists) {
-            return this.lists;
+        if (this.data.length > 0 || this.gettingData) {
+            console.log('1');
+            return this.data;
         }
 
-        this.gettingLists = true;
+        this.gettingData = true;
 
-        return this.getLists().subscribe((response: any) => {
+        return this.index().subscribe((response: any) => {
             const lists = response.obj;
 
             for (const list of lists) {
-                for(let i = 0; i < list.items.length; i++) {
-                    list.items[i] = new Item(list.items[i]);
-                }
-
-                this.dataUpdatedSubscriber(new List(list));
+                this.updateSubscriber(new List(list));
             }
 
-            this.gettingLists = false;
+            this.gettingData = false;
 
             return lists;
         });
-    }
-
-    deleteList(list: List): Observable<List>  {
-        return this._http.delete<List>(this._envConfig.getBaseApiUrl() + '/lists/' + list._id);
-    }
-
-    addList(list: List): Observable<List>  {
-        return this._http.post<List>(this._envConfig.getBaseApiUrl() + '/lists/create-list', { list });
-    }
-
-    editList(list: List): Observable<List>  {
-        return this._http.patch<List>(this._envConfig.getBaseApiUrl() + '/lists/update', { list });
-    }
-
-    getLists() {
-        return this._http.get<List[]>(this._envConfig.getBaseApiUrl() + '/lists/' + this._authService.getCurrentUserId(), {});
     }
 }
