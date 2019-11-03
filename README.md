@@ -1,6 +1,6 @@
 # WhatDoWeNeed
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+https://what-do-we-need.herokuapp.com/sign-up
 
 ## Development server
 

@@ -4,12 +4,13 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 export class EnvironmentConfig {
 
-    public isProd = false;
+    public isProd = true;
 
     constructor() {}
 
     getBaseApiUrl() {
         if (this.isProd === true) {
+            return 'https://what-do-we-need.herokuapp.com/api'
         }
         else {
             return 'http://localhost:3000/api';
