@@ -18,6 +18,7 @@ import { CreateListComponent } from './components/create-list/create-list.compon
 import { ListsComponent } from './components/lists/lists.component';
 import { NeedsComponent } from './components/needs/needs.component';
 import { StockComponent } from './components/stock/stock.component';
+import { ManageInventoryComponent } from './components/manage-inventory/manage-inventory.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { StockComponent } from './components/stock/stock.component';
     CreateListComponent,
     ListsComponent,
     NeedsComponent,
-    StockComponent
+    StockComponent,
+    ManageInventoryComponent
   ],
   imports: [
     BrowserModule,

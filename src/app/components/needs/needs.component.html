@@ -15,6 +15,10 @@
     </div>
 </div>
 
+<div class="wd-list-item margin-top-10" *ngIf="needs.length === 0">
+    <span class="wd-label">Looks like we don't need anything</span><br>
+</div>
+
 <div class="wd-list-item margin-top-10" *ngFor="let item of needs; let i = index;">
     <div class="wd-list-item-title">
         <strong><span class="wd-label">{{item.name}}</span></strong><br>

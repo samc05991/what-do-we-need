@@ -1,0 +1,17 @@
+@import "../styles.scss";
+
+.wd-app {
+    display: grid;
+    grid-template-columns: 250px auto;
+    min-height: 100vh;
+
+    .wd-sidebar {
+        background-color: $primary;
+        color: $white;
+        padding: 15px;
+
+        .active {
+            color: $border;
+        }
+    }
+}

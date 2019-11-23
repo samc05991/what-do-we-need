@@ -4,7 +4,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 export class EnvironmentConfig {
 
-    public isProd = true;
+    public isProd = false;
 
     constructor() {}
 

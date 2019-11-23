@@ -1,10 +1,13 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+$dark: #253240;
 $primary: #2C3E50;
 $secondary: #35495E;
 $third: #4A6FBD;
+
 $border: #E57E25;
+$border-faded: #e57e2575;
 $white: #ECF0F1;
 $grey: #BDC3C7;
 $danger: #EC4037;
@@ -34,11 +37,14 @@ $danger: #EC4037;
 @import "./scss/components/input.scss";
 @import "./scss/components/list-item.scss";
 @import "./scss/components/label.scss";
+@import "./scss/components/subheader.scss";
+@import "./scss/components/utils.scss";
 
 body {
     margin: 0px;
     background-color: $secondary;
     color: $white;
+    min-height: 100vh;
 }
 
 button, body {
@@ -50,67 +56,6 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
-}
-
-.margin-top-5 {
-    margin-top: 5px;
-}
-.margin-top-10 {
-    margin-top: 10px;
-}
-.margin-top-15 {
-    margin-top: 15px;
-}
-.margin-top-20 {
-    margin-top: 20px;
-}
-
-.margin-right-5 {
-    margin-right: 5px;
-}
-.margin-right-10 {
-    margin-right: 10px;
-}
-.margin-right-15 {
-    margin-right: 15px;
-}
-.margin-right-20 {
-    margin-right: 20px;
-}
-
-.margin-left-5 {
-    margin-left: 5px;
-}
-.margin-left-10 {
-    margin-left: 10px;
-}
-.margin-left-15 {
-    margin-left: 15px;
-}
-.margin-left-20 {
-    margin-left: 20px;
-}
-
-.margin-bottom-5 {
-    margin-bottom: 5px;
-}
-.margin-bottom-10 {
-    margin-bottom: 10px;
-}
-.margin-bottom-15 {
-    margin-bottom: 15px;
-}
-.margin-bottom-20 {
-    margin-bottom: 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    margin-top: 15px;
-}
-
-.text-center {
-    text-align: center;
 }
 
 .wd-container {
@@ -133,4 +78,20 @@ h1, h2, h3, h4, h5, h6 {
     .wd-container {
         padding: 0px;
     }
+}
+
+.user-profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: $white;
+    line-height: 80px;
+    text-align: center;
+    margin-right: 15px;
+    background-color: $primary;
+}
+.user-profile:hover {
+    background-color: $border;
+    cursor: pointer;
 }

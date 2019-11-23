@@ -1,3 +1,13 @@
 <app-header></app-header>
+<div class="wd-app">
+    <div class="wd-sidebar text-center">
+        <div class="wd-sidebar-user">
 
-<router-outlet></router-outlet>
+        </div>
+        <h2 [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</h2>
+        <h3>Stock</h3>
+    </div>
+    <div class="wd-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
