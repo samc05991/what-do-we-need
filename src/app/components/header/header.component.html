@@ -6,6 +6,7 @@
     <div class="wd-header-links">
         <a *ngIf="!isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/login']">Login</a>
         <a *ngIf="!isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/sign-up']">Sign Up</a>
+        <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/dashboard']">Dashboard</a>
         <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" (click)="logout()">Logout</a>
     </div>
 </div>

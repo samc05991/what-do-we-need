@@ -32,7 +32,7 @@ import { ManageInventoryComponent } from './components/manage-inventory/manage-i
     ListsComponent,
     NeedsComponent,
     StockComponent,
-    ManageInventoryComponent
+    ManageInventoryComponent,
   ],
   imports: [
     BrowserModule,

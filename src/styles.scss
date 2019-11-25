@@ -60,8 +60,11 @@ button:focus {
 
 .wd-container {
     padding: 15px;
-    width: 70%;
     margin: 0 auto;
+
+    h2 {
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 1400px) {
