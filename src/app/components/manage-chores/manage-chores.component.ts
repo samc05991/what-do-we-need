@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
     selector: 'app-manage-chores',
@@ -10,31 +11,24 @@ export class ManageChoresComponent implements OnInit {
     public rota = [
         {
             day: "Monday",
-            chores: [],
         },
         {
             day: "Tuesday",
-            chores: [],
         },
         {
             day: "Wednesday",
-            chores: [],
         },
         {
             day: "Thursday",
-            chores: [],
         },
         {
             day: "Friday",
-            chores: [],
         },
         {
             day: "Saturday",
-            chores: [],
         },
         {
             day: "Sunday",
-            chores: [],
         }
     ]
     
@@ -55,7 +49,11 @@ export class ManageChoresComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-
+        for(let j = 0; j < this.chores.length; j++) {
+            for(let i = 0; i < this.rota.length; i++) {
+                this.chores[j].days.push({index: i, day: this.rota[i], assignees: []});
+            }
+        }
     }
 
     openUser() {
@@ -72,5 +70,16 @@ export class ManageChoresComponent implements OnInit {
 
     assignUserToChore() {
         
+    }
+
+    drop(event: CdkDragDrop<string[]>) {
+        if (event.previousContainer === event.container) {
+          moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+        } else {
+          copyArrayItem(event.previousContainer.data,
+                            event.container.data,
+                            event.previousIndex,
+                            event.currentIndex);
+        }
     }
 }
