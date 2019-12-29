@@ -1,0 +1,26 @@
+<div class="wd-container">
+    <h2> Chores </h2>
+</div>
+
+<div class="wd-container">
+    <div class="users">
+        <div class="user-profile">E</div>
+        <div class="user-profile">S</div>
+        <div class="user-profile">+</div>
+    </div>
+
+    <div class="wd-panel margin-top-15">
+        <div class="chore-manager">
+            <div class="headings">
+                <div class="heading margin-right-10">Chores</div>
+                <div class="heading margin-right-10" *ngFor="let day of rota">{{day.day}}</div>
+            </div>
+
+            <div class="chores">
+                <div class="chore" *ngFor="let chore of chores">{{chore.name}} 
+                    <div class="day margin-right-10" *ngFor="let day of rota">{{day.day}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

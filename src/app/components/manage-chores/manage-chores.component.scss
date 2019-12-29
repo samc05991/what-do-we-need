@@ -1,0 +1,39 @@
+.wd-container {
+    .users {
+        text-align: center;
+
+        .user-profile {
+            display: inline-block;
+            font-size: 25px;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+
+    .chore-manager {
+        display: grid;
+        grid-template-rows: 40px auto;
+
+        .headings {
+            display: grid;
+            grid-template-columns: 100px auto auto auto auto auto auto auto;
+
+            .heading {
+                text-align: center;
+                display: inline-block;
+            }
+        }
+    
+        .chores {
+            .chore {
+                display: grid;
+                grid-template-columns: 100px auto auto auto auto auto auto auto;
+                // padding: 5px;
+
+                .day {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import { SignUpComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CreateListComponent } from './components/create-list/create-list.component';
 import { ManageInventoryComponent } from './components/manage-inventory/manage-inventory.component';
+import { ManageChoresComponent } from './components/manage-chores/manage-chores.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'create-list', component: CreateListComponent },
   { path: 'manage-inventory', component: ManageInventoryComponent },
+  { path: 'manage-chores', component: ManageChoresComponent },
 ];
 
 @NgModule({

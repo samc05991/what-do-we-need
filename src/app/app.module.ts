@@ -19,6 +19,7 @@ import { ListsComponent } from './components/lists/lists.component';
 import { NeedsComponent } from './components/needs/needs.component';
 import { StockComponent } from './components/stock/stock.component';
 import { ManageInventoryComponent } from './components/manage-inventory/manage-inventory.component';
+import { ManageChoresComponent } from './components/manage-chores/manage-chores.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ManageInventoryComponent } from './components/manage-inventory/manage-i
     NeedsComponent,
     StockComponent,
     ManageInventoryComponent,
+    ManageChoresComponent,
   ],
   imports: [
     BrowserModule,
