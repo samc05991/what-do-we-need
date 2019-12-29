@@ -3,10 +3,35 @@
         <span>WHAT DO WE NEED?</span>
     </div>
 
+    <div class="wd-header-links" [ngStyle]="{'padding' : !isUserLoggedIn ? '15px' : '0'}">
+        <a *ngIf="!isUserLoggedIn" class="margin-top-10 margin-right-15" routerLinkActive="" [routerLink]="['/login']">Login</a>
+        <a *ngIf="!isUserLoggedIn" class="margin-top-10 margin-right-15" routerLinkActive="" [routerLink]="['/sign-up']">Sign Up</a>
+
+        <div *ngIf="isUserLoggedIn" class="dropdown">
+            <div class="user-profile" (click)="showDropdown = !showDropdown">E</div>
+            <div class="dropdown-content" *ngIf="showDropdown">
+                <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" (click)="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isUserLoggedIn" class="wd-header wd-sub-header">
     <div class="wd-header-links">
-        <a *ngIf="!isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/login']">Login</a>
-        <a *ngIf="!isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/sign-up']">Sign Up</a>
-        <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/dashboard']">Dashboard</a>
-        <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" (click)="logout()">Logout</a>
+        <div class="link">
+            <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/dashboard']">Dashboard</a>
+        </div>
+        <div class="link">
+            <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/manage-inventory']">Inventory</a>
+        </div>
+        <div class="link">
+            <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/lists']">Lists</a>
+        </div>
+        <div class="link">
+            <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/manage-chores']">Chores</a>
+        </div>
+        <!-- <div class="link">
+            <a *ngIf="isUserLoggedIn" class="" routerLinkActive="" [routerLink]="['/dashboard']">Groups</a>
+        </div> -->
     </div>
 </div>

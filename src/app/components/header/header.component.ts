@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 export class HeaderComponent implements OnInit {
 
     public isUserLoggedIn: Boolean = false;
+    public showDropdown: Boolean = false;
 
     constructor(private _authService: AuthService) {
         this._authService.userLoggedInChange.subscribe(value => {

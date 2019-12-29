@@ -5,11 +5,11 @@
     color: $white;
     width: 100%;
     height: 55px;
-    padding: 15px;
     box-sizing: border-box;
     border-bottom: 2px solid $border;
-
+    
     .wd-header-title {
+        padding: 15px;
         margin: 0px;
         display: inline-block;
         font-size: 18px;
@@ -19,12 +19,54 @@
         float: right;
         display: block;
 
-        a {
+        a, div {
             text-decoration: none;
             color: $white;
             font-size: 18px;
-            margin: 8px;
+        }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+
+            .user-profile {
+                margin-top: 5px;
+            }
+        }
+          
+        .dropdown-content {
+            position: absolute;
+            right: 20px;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+    }
+}
+
+.wd-sub-header {
+    background-color: $border;
+    color: $white;
+    width: 100%;
+    height: 35px;
+    padding: 0px;
+    padding-left: 15px;
+    box-sizing: border-box;
+
+    .wd-header-links {
+        float: left;
+        height: 35px;
+
+        .link {
+            display: inline-block;
+                        
+            a {
+                font-size: 16px;
+                line-height: 35px;
+                margin-right: 25px;
+            }
         }
     }
 }
