@@ -2,13 +2,15 @@
 
 .wd-container {
     .users {
-        text-align: center;
-
+        span {
+            font-size: 20px;
+        }
         .user-profile {
             display: inline-block;
             font-size: 25px;
             line-height: 40px;
             text-align: center;
+            margin-right: 0px;
         }
     }
 
@@ -18,7 +20,7 @@
 
         .headings {
             display: grid;
-            grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
+            grid-template-columns: 120px 120px 120px 120px 120px 120px 120px 120px;
 
             .heading {
                 text-align: center;
@@ -33,14 +35,29 @@
 
             .chore {
                 display: grid;
-                grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px;
-                padding: 5px;
+                grid-template-columns: 120px 120px 120px 120px 120px 120px 120px 120px;
 
                 .day {
                     padding: 5px;
                     display: inline-block;
                 }
+
+                .user-profile {
+                    display: inline-block;
+                    font-size: 15px;
+                    line-height: 30px;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    margin-right: 0px;
+                }
             }
         }
     }
+}
+
+.control-panels {
+    display: grid;
+    grid-template-columns: 47% 47%;
+    column-gap: 6%;
 }

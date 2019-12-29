@@ -18,7 +18,7 @@ export class NeedsComponent implements OnInit {
     public newItem: {} = {
         name: '',
         status: 'need'
-    }
+    };
 
     constructor(
         private _needsService: NeedsService,
@@ -38,6 +38,11 @@ export class NeedsComponent implements OnInit {
      */
     addNewItemToNeeds() {
         this._needsService.handleAddItem(new Item(Object.assign({}, this.newItem)));
+        
+        this.newItem = {
+            name: '',
+            status: 'need'
+        };
     }
 
     /**

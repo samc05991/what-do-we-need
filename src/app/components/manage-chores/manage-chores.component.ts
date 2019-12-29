@@ -31,20 +31,18 @@ export class ManageChoresComponent implements OnInit {
             day: "Sunday",
         }
     ]
-    
-    public chores = [
-        {
-            name: 'Sweeping',
-            order: 1,
-            days: []
-        }
-    ];
 
-    public users = [
-        {
-            name: 'Erin',
-        }
-    ]
+    public chores = [];
+    public users = []
+    
+    public newChore = {
+        name: '',
+        days: []
+    }
+
+    public newUser = {
+        name: '',
+    }
 
     constructor() { }
 
@@ -60,12 +58,25 @@ export class ManageChoresComponent implements OnInit {
 
     }
 
-    addUser() {
+    addPerson() {
+        let newUser = Object.assign({}, this.newUser);
 
+        this.users.push(newUser);
+
+        this.newUser.name = '';
     }
 
     addChore() {
+        let newChore = Object.assign({ order: this.chores.length }, this.newChore);
 
+        for(let i = 0; i < this.rota.length; i++) {
+            newChore.days.push({index: i, day: this.rota[i], assignees: []});
+        }
+
+        this.chores.push(newChore);
+
+        this.newChore.name = '';
+        this.newChore.days = [];
     }
 
     assignUserToChore() {

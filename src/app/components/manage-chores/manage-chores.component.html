@@ -3,26 +3,63 @@
 </div>
   
 <div class="wd-container" cdkDropListGroup>
-    <div class="users" cdkDropList [cdkDropListData]="users">
-        <div *ngFor="let user of users" class="user-profile" cdkDrag>E</div>
-        <div class="user-profile">+</div>
+    <div class="users text-left" cdkDropList [cdkDropListData]="users">
+        <span>People:</span> 
+        <div class="user-profile margin-left-10">+</div>
+        <div *ngFor="let user of users" class="user-profile margin-left-10" cdkDrag>{{user.name.charAt(0)}}</div>
     </div>
 
     <div class="wd-panel margin-top-15">
         <div class="chore-manager">
             <div class="headings">
-                <div class="heading margin-right-10">Chores</div>
-                <div class="heading margin-right-10" *ngFor="let day of rota">{{day.day}}</div>
+                <div class="heading">Chores</div>
+                <div class="heading" *ngFor="let day of rota">{{day.day}}</div>
             </div>
 
             <div class="chores">
-                <div class="chore" *ngFor="let chore of chores" >
+                <div class="chore margin-top-15 text-center" *ngFor="let chore of chores">
                     {{chore.name}}
 
-                    <div class="chore" *ngFor="let day of chore.days" cdkDropList [cdkDropListData]="day.assignees" (cdkDropListDropped)="drop($event)">
-                        <div *ngFor="let user of day.assignees" class="user-profile" cdkDrag>{{user.name}}</div>                
+                    <div class="chore" *ngFor="let day of chore.days" >
+                        <div class="" cdkDropList [cdkDropListData]="day.assignees" (cdkDropListDropped)="drop($event)">
+                            <div *ngFor="let user of day.assignees" class="user-profile" cdkDrag>{{user.name.charAt(0)}}</div>                
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wd-container control-panels">
+    <div class="wd-panel margin-top-15">
+        <div class="wd-panel-header">
+            <strong><span class="wd-label-header">Add a Person</span></strong>
+
+            <p>Add a person to your household. They can be assigned to do chores and tasks.</p>
+
+            <div class="margin-top-20">
+                <strong><span class="wd-label-sm">Name</span></strong><br>
+        
+                <input type="text" [(ngModel)]="newUser.name" class="wd-input" placeholder="Persons Name"><br><br>
+
+                <button type="button" class="wd-btn wd-btn-block margin-top-10" (click)="addPerson()">Add Person</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wd-panel margin-top-15">
+        <div class="wd-panel-header">
+            <strong><span class="wd-label-header">What do we need to do?</span></strong>
+
+            <p>Add chores and tasks that need to be done.</p>
+
+            <div class="margin-top-20">
+                <strong><span class="wd-label-sm">Name</span></strong><br>
+        
+                <input type="text" [(ngModel)]="newChore.name" class="wd-input" placeholder="Chore Name"><br><br>
+
+                <button type="button" class="wd-btn wd-btn-block margin-top-10" (click)="addChore()">Add Chore</button>
             </div>
         </div>
     </div>
