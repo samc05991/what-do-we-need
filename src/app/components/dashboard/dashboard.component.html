@@ -2,23 +2,23 @@
     <h2> Dashboard </h2>
 </div>
 <div class="wd-container wd-dashboard">
-    <div class="wd-panel margin-right-15" [routerLink]="['/manage-inventory']">
+    <div class="wd-panel" [routerLink]="['/manage-inventory']">
         <div class="wd-panel-header">
-            <strong><span class="wd-label-header">Manage Stock</span></strong>
+            <strong><span class="wd-label-header">Inventory</span></strong>
             <button type="button" class="wd-btn wd-btn-sm">Go</button>
 
             <p>Add items to your inventory and add items that need to be replenished.</p>
         </div>
         
-        <div class="wd-list-item margin-top-10">
+        <div class="wd-list-item">
             <span class="wd-label">In Stock: 12 Items</span><br>
             <span class="wd-label">Need: 8 Items</span><br>
         </div>
     </div>
     
-    <div class="wd-panel margin-right-15 margin-left-15">
+    <div class="wd-panel">
         <div class="wd-panel-header">
-            <strong><span class="wd-label-header">Manage Lists</span></strong>
+            <strong><span class="wd-label-header">Lists</span></strong>
             <button type="button" class="wd-btn wd-btn-sm">Go</button>
             <p>Create lists of things you regularly need to get like recipes or cleaning supplies</p>
         </div>
@@ -28,9 +28,9 @@
         </div>
     </div>
 
-    <div class="wd-panel margin-left-30">
+    <div class="wd-panel" [routerLink]="['/manage-chores']">
         <div class="wd-panel-header">
-            <strong><span class="wd-label-header">Manage Chores</span></strong>
+            <strong><span class="wd-label-header">Chores</span></strong>
             <p>Add chores and tasks that can be scheduled using a calendar</p>
         </div>
         

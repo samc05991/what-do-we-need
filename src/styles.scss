@@ -3,7 +3,7 @@
 
 $dark: #253240;
 $primary: #2C3E50;
-$secondary: #35495E;
+$secondary: #54697f;
 $third: #4A6FBD;
 
 $border: #E57E25;
@@ -63,37 +63,29 @@ button:focus {
     margin: 0 auto;
 
     h2 {
+        text-align: center;
         margin: 0;
     }
 }
 
-@media screen and (max-width: 1400px) {
-    .wd-container {
-        width: 80%;
-    }
-}
-@media screen and (max-width: 1150px) {
-    .wd-container {
-        width: 90%;
-    }
-}
 @media screen and (max-width: 600px) {
     .wd-container {
-        padding: 0px;
+        margin: unset;
     }
 }
 
 .user-profile {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     font-size: 50px;
     color: $white;
-    line-height: 80px;
+    line-height: 40px;
     text-align: center;
     margin-right: 15px;
-    background-color: $primary;
+    background-color: $border;
 }
+
 .user-profile:hover {
     background-color: $border;
     cursor: pointer;

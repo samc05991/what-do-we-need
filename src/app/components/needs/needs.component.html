@@ -3,15 +3,14 @@
     <button type="button" class="wd-btn wd-btn-sm" (click)="addItemToStock = !addItemToStock">Add new item</button>
 
     <div *ngIf="addItemToStock" class="margin-top-20">
-        <strong><span class="wd-label">Add Item</span></strong><br><br>
+        <strong><span class="wd-label-sm">Name</span></strong><br>
 
-        <strong><span class="wd-label">Name</span></strong><br>
         <input type="text" [(ngModel)]="newItem.name" class="wd-input" placeholder="Item Name"><br><br>
 
         <!-- <strong><span class="wd-label">Quantity</span></strong><br>
         <input type="text" [(ngModel)]="newItem.quantity" class="wd-input" placeholder="Item Quantity"><br><br>
  -->
-        <button type="button" class="wd-btn wd-btn-block margin-top-20" (click)="addNewItemToNeeds()">Add To List</button>
+        <button type="button" class="wd-btn wd-btn-block margin-top-10" (click)="addNewItemToNeeds()">Add To List</button>
     </div>
 </div>
 

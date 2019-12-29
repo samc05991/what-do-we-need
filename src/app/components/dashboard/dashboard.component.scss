@@ -2,9 +2,9 @@
 
 .wd-dashboard {
     display: grid;
-    grid-template-columns: 32% AUTO 32%;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 5%;
     grid-template-rows: auto auto;
-    grid-gap: 20px;
     box-sizing: border-box;
 
     .wd-panel {
@@ -26,19 +26,10 @@
     }
 }
   
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 996px) {
     .wd-dashboard {
-        width: 80%;
-    }
-}
-
-@media screen and (max-width: 1150px) {
-    .wd-dashboard {
-        width: 90%;
-    }
-}
-@media screen and (max-width: 600px) {
-    .wd-dashboard {
-        width: 100%;
+        grid-template-columns: 100%;
+        column-gap: 0%;
+        row-gap: 30px;
     }
 }
