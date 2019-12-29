@@ -60,4 +60,10 @@
     display: grid;
     grid-template-columns: 47% 47%;
     column-gap: 6%;
+
+    .wd-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }

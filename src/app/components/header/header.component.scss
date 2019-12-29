@@ -71,6 +71,21 @@
     }
 }
 
+.wd-nav-title {
+    text-align: center;
+    background-color: $white;
+    padding: 8px;
+    
+    h2 {
+        color: $secondary;
+        margin: 0;
+    }
+
+    -webkit-box-shadow: 7px 7px 20px -5px rgba(0,0,0,0.46);
+    -moz-box-shadow: 7px 7px 20px -5px rgba(0,0,0,0.46);
+    box-shadow: 7px 7px 20px -5px rgba(0,0,0,0.46);
+}
+
 @media screen and (max-width: 600px) {
     .wd-header{
         .wd-header-title {
